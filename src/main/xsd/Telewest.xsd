@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SML Schema version 3.0 (offnet) -->
+<xs:schema elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Telewest">
+    <xs:annotation>
+      <xs:documentation>XMLFE Transaction File</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Interface">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TransactionID" type="xs:string"/>
+              <xs:element name="Code" type="xs:string"/>
+              <xs:element name="House" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Company" type="xs:string"/>
+                    <xs:element name="Franchise" type="xs:string"/>
+                    <xs:element name="Division" type="xs:string"/>
+                    <xs:element name="SiteID" type="xs:string"/>
+                    <xs:element name="Number" type="xs:string"/>
+                    <xs:element name="NodeID" type="xs:string"/>
+                    <xs:element name="Cabinet" type="xs:string"/>
+                    <xs:element name="NetworkID" type="xs:string"/>
+                    <xs:element name="AddressLine1" type="xs:string"/>
+                    <xs:element name="AddressLine2" type="xs:string"/>
+                    <xs:element name="AddressLine3" type="xs:string"/>
+                    <xs:element name="AddressLine4" type="xs:string"/>
+                    <xs:element name="City" type="xs:string"/>
+                    <xs:element name="PostCode" type="xs:string"/>
+					<xs:element name="ReturnPath" type="xs:string"/>					
+                    <xs:element name="Customer" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Account" type="xs:string"/>
+                          <xs:element name="CustomerCategory" type="xs:string"/>
+                          <xs:element name="Title" type="xs:string"/>
+                          <xs:element name="Forename" type="xs:string"/>
+                          <xs:element name="Surname" type="xs:string"/>                          
+                          <xs:element name="MasterPIN" type="xs:string"/>
+                          <xs:element name="MonthlyAvailableCredit" type="xs:string"/>
+                          <xs:element name="FromSite" type="xs:string"/>
+                          <xs:element name="FromAccount" type="xs:string"/>						  
+						  <xs:element name="BusinessName1" type="xs:string" minOccurs="0"/>
+                          <xs:element name="BusinessName2" type="xs:string" minOccurs="0"/>
+                          <xs:element name="MasterSite" type="xs:string" minOccurs="0"/>
+                          <xs:element name="MasterAccount" type="xs:string" minOccurs="0"/>
+                          <xs:element name="MasterEmail" type="xs:string" minOccurs="0"/>
+                          <xs:element name="IPforename" type="xs:string" minOccurs="0"/>
+                          <xs:element name="IPsurname" type="xs:string" minOccurs="0"/>
+                          <xs:element name="IPtelephone" type="xs:string" minOccurs="0"/>
+                          <xs:element name="IPemail" type="xs:string" minOccurs="0"/>
+                          <xs:element name="WEBforename" type="xs:string" minOccurs="0"/>
+                          <xs:element name="WEBsurname" type="xs:string" minOccurs="0"/>
+                          <xs:element name="WEBtelephone" type="xs:string" minOccurs="0"/>
+                          <xs:element name="WEBemail" type="xs:string" minOccurs="0"/>						  
+                          <xs:element name="Equipment" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="VendorCode" type="xs:string"/>
+                                <xs:element name="ItemNumber" type="xs:string"/>
+                                <xs:element name="SerialNumber" type="xs:string"/>
+                                <xs:element name="DigitalAddress" type="xs:string"/>
+                                <xs:element name="MACAddress" type="xs:string"/>
+								<xs:element name="SmartCardItem" type="xs:string" />
+                                <xs:element name="SmartCardNumber" type="xs:string"/>
+                                <xs:element name="ModelNumber" type="xs:string"/>
+                                <xs:element name="Location" type="xs:string"/>
+                                <xs:element name="Status" type="xs:string"/>
+                                <xs:element name="ServiceCategory" type="xs:string"/>
+                                <xs:element name="OccurrenceNumber" type="xs:string"/>
+								<xs:element name="CLI" type="xs:string"/>
+                                <xs:element name="CLI2" type="xs:string"/>
+								<xs:element name="ServiceID" type="xs:string"/> 
+                                <xs:element name="MOPcode" type="xs:string" minOccurs="0"/>
+                                <xs:element name="MOPdescription" type="xs:string" minOccurs="0"/>
+                                <xs:element name="MOPvendor" type="xs:string" minOccurs="0"/>
+                                <xs:element name="MOPvendorName" type="xs:string" minOccurs="0"/>
+                                <xs:element name="MOPaccount" type="xs:string" minOccurs="0"/>                              
+                                <xs:element name="Statement" minOccurs="0" maxOccurs="1">
+	                              <xs:complexType>
+	                                <xs:sequence>
+	                                  <xs:element name="StatementCode" type="xs:string" maxOccurs="1" minOccurs="0"/>
+	                                  <xs:element name="BillDay" type="xs:string" maxOccurs="1" minOccurs="1"/>
+	                                </xs:sequence>
+	                              </xs:complexType>
+                                </xs:element>                             
+                                <xs:element name="Port" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="PortNumber" type="xs:string"/>
+                                      <xs:element name="FeatureBits" type="xs:string"/>
+                                      <xs:element name="Service" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="ServiceCode" type="xs:string"/>
+                                            <xs:element name="ServiceTag" minOccurs="1" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="Tag" type="xs:string"/>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Context" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="InterfaceType" type="xs:string"/>
+                    <xs:element name="InterfaceCode" type="xs:string"/>
+                    <xs:element name="ProgramID" type="xs:string"/>
+                    <xs:element name="RecordType" type="xs:string"/>
+                    <xs:element name="TransactionType" type="xs:string"/>
+                    <xs:element name="ProblemCode" type="xs:string"/>
+                    <xs:element name="OrderType" type="xs:string"/>
+                    <xs:element name="EquipmentStatus" type="xs:string"/>
+                    <xs:element name="EntityStatus" type="xs:string"/>
+                    <xs:element name="TempEnabled" type="xs:string"/>
+                    <xs:element name="PTMtype" type="xs:string"/>
+                    <xs:element name="PTMaction" type="xs:string"/>
+                    <xs:element name="ServiceCategory" type="xs:string"/>
+                    <xs:element name="PWSactivity" type="xs:string"/>
+                    <xs:element name="OrderCallCode" type="xs:string"/>
+                    <xs:element name="OrderStatus" type="xs:string"/>
+                    <xs:element name="CheckInStatus" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+			</xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
